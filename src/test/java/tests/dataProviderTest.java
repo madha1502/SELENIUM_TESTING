@@ -35,4 +35,35 @@ public class dataProviderTest {
         data[1][1] = "admin";
         return data;
     }
+
+    //By using the 2-Dimensional Object Array
+    @Test(dataProvider = "Object2Test")
+    public void Object2(Object[] s) throws Exception{
+        for(int i=0;i<s.length;i++){
+            System.out.print(s[i]+">>>");
+        }
+    }
+    @DataProvider(name = "Object2Test")
+    public Object[][] Object2Data(){
+        Object[][] data = new Object[][]{
+            {"Admin","admin123"},
+            {"Admin","admin"}
+        };
+        return data;
+    }
+
+    //By using 1-Dimensional Array
+    @Test(dataProvider = "Object1Test")
+    public void Object1(Object[] s) throws Exception{
+        System.out.println(s[0]+"--->"+s[1]);
+    }
+    @DataProvider(name = "Object1Test")
+    public Object[] Object1Data(){
+        Object[][] data = new Object[][]{
+                {"Admin","admin123"},
+                {"Admin","admin"}
+        };
+        return data;
+    }
+
 }
