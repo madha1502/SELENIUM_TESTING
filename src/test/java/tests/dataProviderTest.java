@@ -66,4 +66,21 @@ public class dataProviderTest {
         return data;
     }
 
+
+    //Concept of Indices - (Similar to Index in java)
+    @Test(dataProvider = "Object3Data")
+    public void Object3(Object[] s) throws Exception{
+        System.out.println(s);
+    }
+    @DataProvider(indices = {0,3})
+    public Object[] Object3Data(){
+        Object[] data = new Object[]{
+               "Madhavan",
+                "Kavin",
+                "Deepesh",
+                "Karthik"
+        };
+        return data;
+    }
+
 }
